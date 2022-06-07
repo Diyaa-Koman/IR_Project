@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+    <head>
+        <link src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style>
+            *{margin: 0;padding: 0}body{justify-content: center;align-items: center;height: 600px;width: 100%;background-color: #000}.card{height: 720px;width: 100%;background-image: url('https://i.imgur.com/0v6OPXZ.jpg');background-repeat: no-repeat;background-size: 100% 100%;border: none;border-radius: 15px;position: relative;overflow: hidden;cursor: pointer;transition:all 1s}.card:hover{background-image: url('https://i.imgur.com/nnGNYwf.png');background-size: 100% 100%;background-repeat:no-repeat}.text1{display: flex;justify-content: center;align-items: center;text-align: center}.text1 h1{color: #000;font-size: 40px;font-weight: 600;font-family: 'Shippori Mincho B1', serif}.text2{text-align: center;color: #5e94c1}.form-control{height: 54px;width: 550px;background-color: #fff;border: none;border-radius: 20px;position: relative}.btn1{align-items: center;position: absolute;height: 44px;width: 44px;border-radius: 50%;background-color: #3252D1;border: none}.input-field{position: relative}.input-field button{position: absolute;right: 10px;top: 63px;color: #fff;font-size: 14px;cursor: pointer}.card .icons{position: absolute;bottom: -340px;left: 40%;transition: all 0.5s}.card:hover .icons{bottom: 40px}.card .icons span{font-size: 23px;color: white}
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body style="height: 100%;">
+        <div class="container" style="height: 100%;">
+            <div class="card" style="height: 100%;">
+                <div class="text1 mt-5" style="margin: 50px;"> 
+                    <h1>Search Engine <br> IR Project</h1>
+                </div>
+            <div class="text2 mt-3"> 
+                <span>Take a seat,and type down here where you want to live,and <br> we'll show you amazing listing</span> 
+            </div> 
+            <div class="text1 d-flex justify-content-center mt-5" style="margin: 100px;"> 
+                <div class="input-field"> 
+                    <form action="{{ url_for('search') }}" method="POST" enctype="multipart/form-data">
+                        <div class="m-2" style="margin : 20px">
+                        <label class="form-check-label">
+                            Choose your dataset : 
+                            <input type="radio" class="form-check-input" name="choose_ds" value="1" checked="checked">DS 1
+                          </label>
+                         <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="choose_ds" value="2">DS 2
+                          </label>
+                        </div>
+                        <div>
+                            <input name="query" placeholder="Search for something ..." class="form-control" style="padding: 0 20px;"/>
+                            <input name="image" type="file">
+                            <button class="btn btn1"><i class="fa fa-search"></i></button> 
+                        </div>
+                    </form>
+                </div> 
+                </div> 
+                <div class="d-flex justify-content-center align-items-center mt-5 gap-4 icons"> 
+                    <span><i class="fa-brands fa-google"></i></span> 
+                    <span><i class="fa-brands fa-facebook"></i></span> 
+                    <span><i class="fa-brands fa-twitter"></i></span> 
+                    <span><i class="fa-brands fa-instagram"></i></span> 
+                </div> 
+            </div> 
+        </div> 
+    </body>
+</html>
